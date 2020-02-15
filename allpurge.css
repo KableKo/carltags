@@ -1,0 +1,9 @@
+Draft:
+{let(exe):c:}
+{let(act):cleanup}
+{let(dis):{args}}
+{let(all):purge}
+{let(run):{if({1}==cu):{act}|{purge}}
+{let(switch):{all({2}==pls):{con} {opts}|{args(2+)}}}
+{let(app):{if({2}==):{exe}{run} {dis}|{exe}{run} {switch} {dis}}}
+{{app}}
