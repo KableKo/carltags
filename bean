@@ -1,0 +1,20 @@
+{=():}
+{=(count):11}
+{=(s):{any({contains(580753427945226241):{user(roleids)}}==true|{contains(669207257254461440):{user(roleids)}}==true):7|{if({user(id)}=={target(id)}):you|{range:1-{count}}}}}
+{=(r1):Beaned **{target}**╜ <:pepebeans:650871536172924948> ╜}
+{=(r2):**{target}** got absolutely beaned OOOOOF!!!!!!╜ <:beaned:632728764933079051> ╜}
+{=(r3):OH NO THE BEANS BACKFIRED ON YOU RUNNN!!!!╜ <:Monkas:343957144682364929> ╜}
+{=(r4):How can you bean someone if you don't have any beans huh╜ <:beanos:642608022887202817> ╜}
+{=(r5):**{target}** got Coffee Beaned! They gonna be up all night!╜ <a:trippin:585653357046398996> ╜c: cembed {channel(id)} {"image":{"url":" https://i.imgur.com/Jjw9k9z.png "}}}
+{=(r6):**{target}** got Bake Beaned! Pass 'em the pizza rolls.╜ <a:mhm:680103302175916169> ╜c: cembed {channel(id)} {"image":{"url":" https://i.imgur.com/KSiceH9.png "}}}
+{=(r7):Sksksksk **{target}** got VSCO Beaned and dropped their Hydro Flask! sksksksk and I oop-╜ <a:feelsweirdman:575412409875955749> ╜c: cembed {channel(id)} {"image":{"url":" https://i.imgur.com/zPaawa1.png "}}}
+{=(r8):OH SHIT THIS THE MEGA BEAN╜ <:beaned:632728764933079051> ╜c: cembed {channel(id)} {"image":{"url":" https://i.imgur.com/YwlOXvS.png "}}}
+{=(r9):SPICY MEGA BEAN IS COMIN' FOR **{upper:{target}}**'S COLON╜ <:SpicyBean:676953671644479528> ╜c: cembed {channel(id)} {"image":{"url":" https://i.imgur.com/2fvukpP.png "}}}
+{=(r10):RUN **{upper:{target}}** ULTRA-BEAN IS ANGRY╜ <a:pepeRun:615779718133710878> ╜c: cembed {channel(id)} {"image":{"url":" https://i.imgur.com/BkLcVc2.gif "}}}
+{=(r11):BEANOS SNAPPED **{upper:{target}}**!!╜ <a:kgetThanosSnappedBreh:647558322269978662> ╜c: cembed {channel(id)} {"image":{"url":" https://i.imgur.com/am6wISL.png "}}}
+{=(ryou):You beaned yourself? good job.╜ <a:PepeLaughers:627151750838878248> ╜}
+
+{r{s}(1):╜}
+{react:{r{s}(2):╜}}
+{{r{s}(3):╜}}
+{require:487255175807893504,655059469016760341,629855736041701376}
