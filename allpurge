@@ -1,9 +1,28 @@
-Draft:
 {let(exe):c:}
-{let(act):cleanup}
-{let(dis):{args}}
-{let(all):purge}
-{let(run):{if({1}==cu):{act}|{purge}}
-{let(switch):{all({2}==pls):{con} {opts}|{args(2+)}}}
-{let(app):{if({2}==):{exe}{run} {dis}|{exe}{run} {switch} {dis}}}
-{{app}}
+{let(cu):cleanup 10}
+{let(p):purge 5}
+{let(b):purge bot 10 pls}
+{let(word):purge contains {args(2)}}
+{let(l):purge links}
+{let(pic):purge images}
+{let(e):purge emoji}
+{let(rekt):purge user {args(2)}}
+{let(act):cu p b word l pic e rekt}
+{let(dis):{args(1)}}
+{let(run):{if({contains({args(1)}):{act}}==false):cu|{dis}}}
+{let(app):{exe}{{run}}}
+{let(helpkey):Accepted arguments and use are as follows:
+`[p].`— cleanup(also known as cu)
+`[p]. p`— standard purge (5 messages)
+`[p]. e`— purge emoji
+`[p]. l`— purge links
+`[p]. b`— purge bot [pls] 10 (purges memer, and `pls` prefix defaults to 10 msgs)
+`[p]. word`— purge contains [flag](pass word for contains in 2nd arg)
+`[p]. pic`— purge images
+`[p]. rekt`— purge user [flag] (pass ID or ping user in 2nd argument)}
+{{if({args(1)}==help):helpkey|{if({args(1)}==):{app}|{app}}}}
+{silent}
+{require(Didn't see you on the mod list LMAO):487255175807893504,629855736041701376}
+{delete}
+{blacklist: <#639920133841747999>} 
+//special case for guild created-in
