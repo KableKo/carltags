@@ -1,238 +1,25 @@
-// --- Final `change` ver.2 --- //
-{=(list):name pfp status}
-{=(flag):{lower:{2}}}
+// --- Vers. 3 --- //
+{=(list):name pfp status}{=(flag):{lower:{2}}}
 {=():}
 {=(flag):{if({contains({lower:{flag}}):{list}}==true):{lower:{flag}}|}}
 {=(culprit):{if({target}=={user}):{1}|{target(id)}}}
-{=(pfp):Your profile picture is extremely inappropriate and can be taken offensively and/or it's against our server rules and guidelines. If you'd like to rejoin {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(name):Your name contains a blacklisted word and is against the rules of {server}. If you wish to return, you will have to change it. Thank you in advance for your understanding and cooperation. 
+{=(pfp):Your profile picture is inappropriate and can be taken offensively and/or it's against our server rules and guidelines. If you'd like to rejoin {server}, you'll have to change it.}
+{=(name):Your name contains a blacklisted word and is against the rules of {server}. If you wish to return, you will have to change it. Thank you in advance for your understanding and cooperation.
 **Name in incident:** {if({args(1)}!={target(id)}):<@{culprit}>|{target(name)}}}
-{=(status):Your status has inappropriate content that is against our rules or [Discord ToS](https://discordapp.com/terms/ "Click me breh"). Please change before returning.}
-{=(dmReason):Your name/profile picture can be taken offensively and goes against our community guidelines. If you'd like to return to {server}, you'll have to change it. Thanks in advance for understanding.}
+{=(status):Your status has inappropriate content that is against our rules or [Discord ToS](https://discordapp.com/terms). Please change before returning.}
+{=(dmReason):Your name/profile picture can be taken offensively and goes against our community guidelines. If you'd like to return to {server}, you'll have to change it.}
 {=(dmReason):{if({flag}==):{dmReason}|{{flag}}}}
 {=(modlogReason):{if({flag}==):User was kicked for having blacklisted/offensive words in their name, pfp, or custom status|{flag}}}
-{=(exe):{if({args(1)}==):{break({args(1)}==):Oops! Pass some arguments like `UserID status [example] [r]`. The r option will make a reminder.}|c:}}
+{=(exe):{if({args(1)}==):{break({args(1)}==):`!change UserID status [-r]`. The -r option will silence reminder.}|c:}}
 {=(eCmd):REEE}
 {=(warnCmd):warn {culprit} {dmReason}}
 {=(kickCmd):kick {culprit} {modlogReason}}
-{=(rCmd):rm 12h -i {culprit} Check and see if this user rejoined with blacklisted {flag}}
-{=(done):{exe}echo You chose no reminders for this action. RIP}
+{=(rCmd):rm 12h  `-i {culprit}` Check and see if this user rejoined with blacklisted {flag}}
+{=(done):You chose no reminders for this action. :RIP:}{=(done):reactu: :rekt: }
 {=(step1):{exe}{if({culprit}==):eCmd|{warnCmd}}}
 {=(step2):{exe}{if({culprit}==):eCmd|{kickCmd}}}
 {=(step3):{exe}{if({culprit}==):eCmd|{rCmd}}}
-{=(Stop1):{if({args(3)}==r):step3|{if({args(4)}==r):step3|done}}}
+{=(Stop1):{if({args(3)}==-r):done|step3}}
 {=(run):{if({contains({args(2)}):{flag}}==true):{{{step1}}}{{step2}}{{Stop1}}|eCmd}}
 {=(IO):{if({1}!={culprit}):exe|run}}
 {{{IO}}}
-
-
-/* --- DRAFTS ---
-{=(list): name pfp status}
-{=(flag):{2}}
-{=(flag):{if({contains({flag}):{list}}==true):{flag}|}}
-{=(culprit):{if({target}=={user}):{1}|{target(id)}}}
-{=(pfp):Your profile picture is extremely inappropriate and can be taken offensively and/or it's against our server rules and guidelines. If you'd like to rejoin {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(name):Your name contains a blacklisted word{if({join(, ):{args(3+)}}==):| ({join(, ):{args(3+)}})} and is against the rules of {server}. If you wish to return, you will have to change it. Thank you in advance for your understanding and cooperation}
-{=(status):{if({args(3)}==invite): Your status has an advertisement {if({args(4)}!=):[invite]({args(4)})| or link not allowed in {server}}. Please remove this from your status before returning.| Your status has an advertisement or inappropriate content{if({join(, ):{args(3+)}}==):| ({join(, ):{args(3+)}})} that is against our rules/Discord ToS. Please change before returning.}}
-{=(dmReason):Your name/profile picture can be taken offensively and goes against our community guidelines. If you'd like to return to {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(dmReason):{if({flag}==):{dmReason}|{{flag}}}}
-{=(modlogReason):{if({flag}==):User was kicked for having blacklisted/offensive words in their name, pfp, or custom status|{flag}}}
-{=(errorCmd):echo Breh you gonna run this tag or play with it? Example: !change TargetUserID name [nigga]}
-{=(warnCmd):warn {culprit} {dmReason}}
-{=(kickCmd):kick {culprit} {modlogReason}}
-{=(rmCmd):rm 12h -i {culprit} re-check name/pfp/or status}
-{=(exe):c:}
-{=(step1):{exe}{if({culprit}==):errorCmd|{warnCmd}}}
-{=(step2):{exe}{if({culprit}==):errorCmd|{kickCmd}}}
-{=(step3):{exe}{if({culprit}==):errorCmd|{rmCmd}}}
-{=(run):{{step1}} {{step2}} {{step3}}}
-{{if({1}!=):run|{exe} echo lmfao}}
-
-
-
-{=(list): name pfp status}
-{=(flag):{2}}
-{=(flag):{if({contains({flag}):{list}}==true):{flag}|}}
-{=(culprit):{if({target}=={user}):{1}|{target(id)}}}
-{=(pfp):Your profile picture is extremely inappropriate and can be taken offensively and/or it's against our server rules and guidelines. If you'd like to rejoin {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(name):Your name contains a blacklisted word{if({join(, ):{args(3+)}}==):| ({join(, ):{args(3+)}})} and is against the rules of {server}. If you wish to return, you will have to change it. Thank you in advance for your understanding and cooperation}
-{=(status):{if({args(3)}==invite): Your status has an advertisement {if({args(4)}!=):[invite]({args(4)})| or link not allowed in {server}}. Please remove this from your status before returning.| Your status has an advertisement or inappropriate content{if({join(, ):{args(3+)}}==):| ({join(, ):{args(3+)}})} that is against our rules/Discord ToS. Please change before returning.}}
-{=(dmReason):Your name/profile picture can be taken offensively and goes against our community guidelines. If you'd like to return to {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(dmReason):{if({flag}==):{dmReason}|{{flag}}}}
-{=(modlogReason):{if({flag}==):User was kicked for having blacklisted/offensive words in their name, pfp, or custom status|{flag}}}
-{=(errorCmd):echo Breh you gonna run this tag or play with it? Example: !change TargetUserID name [nigga]}
-{=(warnCmd):warn {culprit} {dmReason}}
-{=(kickCmd):kick {culprit} {modlogReason}}
-{=(rmCmd):rm 12h -i {culprit} re-check name/pfp/or status}
-{=(exe):c:}
-{=(step1):{exe}{if({culprit}==):errorCmd|{warnCmd}}}
-{=(step2):{exe}{if({culprit}==):errorCmd|{kickCmd}}}
-{=(step3):{exe}{if({culprit}==):errorCmd|{rmCmd}}}
-{=(run):{step1} {step2} {step3}}
-{=(IO):{{if({1}!=):run|{exe} echo lmfao}}}
-{{{IO}}}
-
-
-
-{=(list): name pfp status}
-{=(flag):{2}}
-{=(flag):{if({contains({flag}):{list}}==true):{flag}|}}
-{=(culprit):{if({target}=={user}):{1}|{target(id)}}}
-{=(pfp):Your profile picture is extremely inappropriate and can be taken offensively and/or it's against our server rules and guidelines. If you'd like to rejoin {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(name):Your name contains a blacklisted word{if({join(, ):{args(3+)}}==):| ({join(, ):{args(3+)}})} and is against the rules of {server}. If you wish to return, you will have to change it. Thank you in advance for your understanding and cooperation}
-{=(status):{if({args(3)}==invite): Your status has an advertisement {if({args(4)}!=):[invite]({args(4)})| or link not allowed in {server}}. Please remove this from your status before returning.| Your status has an advertisement or inappropriate content{if({join(, ):{args(3+)}}==):| ({join(, ):{args(3+)}})} that is against our rules/Discord ToS. Please change before returning.}}
-{=(dmReason):Your name/profile picture can be taken offensively and goes against our community guidelines. If you'd like to return to {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(dmReason):{if({flag}==):{dmReason}|{{flag}}}}
-{=(modlogReason):{if({flag}==):User was kicked for having blacklisted/offensive words in their name, pfp, or custom status|{flag}}}
-{=(errorCmd):echo Oops!}
-{=(warnCmd):warn {culprit} {dmReason}}
-{=(kickCmd):kick {culprit} {modlogReason}}
-{=(rmCmd):rm 12h -i {culprit} re-check name/pfp/or status}
-{=(exe):c:}
-{=(step1):{exe}{if({culprit}==):errorCmd|{warnCmd}}}
-{=(step2):{exe}{if({culprit}==):errorCmd|{kickCmd}}}
-{=(step3):{exe}{if({culprit}==):errorCmd|{rmCmd}}}
-{=(run):{if({contains({args(2)}):{flag}}==true):{step1} {step2} {step3}|}}
-{=(IO):{if({1}!=):run|{exe} echo lmfao}}
-{{{IO}}}
-
-
-
-
-
-{=(list): name pfp status}
-{=(flag):{2}}
-{=(flag):{if({contains({flag}):{list}}==true):{flag}|}}
-{=(culprit):{if({target}=={user}):{1}|{target(id)}}}
-{=(pfp):Your profile picture is extremely inappropriate and can be taken offensively and/or it's against our server rules and guidelines. If you'd like to rejoin {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(name):Your name contains a blacklisted word{if({join(, ):{args(3+)}}==):| ({join(, ):{args(3+)}})} and is against the rules of {server}. If you wish to return, you will have to change it. Thank you in advance for your understanding and cooperation}
-{=(status):{if({args(3)}==invite): Your status has an advertisement {if({args(4)}!=):[invite]({args(4)})| or link not allowed in {server}}. Please remove this from your status before returning.| Your status has an advertisement or inappropriate content{if({join(, ):{args(3+)}}==):| ({join(, ):{args(3+)}})} that is against our rules/Discord ToS. Please change before returning.}}
-{=(dmReason):Your name/profile picture can be taken offensively and goes against our community guidelines. If you'd like to return to {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(dmReason):{if({flag}==):{dmReason}|{{flag}}}}
-{=(modlogReason):{if({flag}==):User was kicked for having blacklisted/offensive words in their name, pfp, or custom status|{flag}}}
-{=(errorCmd):echo Oops!}
-{=(warnCmd):warn {culprit} {dmReason}}
-{=(kickCmd):kick {culprit} {modlogReason}}
-{=(rmCmd):rm 12h -i {culprit} re-check name/pfp/or status}
-{=(exe):c:}
-{=(step1):{exe}{if({culprit}==):errorCmd|warnCmd}}
-{=(step2):{exe}{if({culprit}==):errorCmd|kickCmd}}
-{=(step3):{exe}{if({culprit}==):errorCmd|rmCmd}}
-{=(run):{if({contains({args(2)}):{flag}}==true):{step1} {{step2}} {{step3}}|}}
-{=(IO):{if({1}!=):run|exe echo lmfao}}
-{{{{IO}}}}
-
-
-
-
-{=(list):name pfp status}
-{=(flag):{2}}
-{=():}
-{=(flag):{if({contains({flag}):{list}}==true):{flag}|}}
-{=(culprit):{if({target}=={user}):{1}|{target(id)}}}
-{=(pfp):Your profile picture is extremely inappropriate and can be taken offensively and/or it's against our server rules and guidelines. If you'd like to rejoin {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(name):Your name contains a blacklisted word{if({join(, ):{args(3+)}}==):| ({join(, ):{args(3+)}})} and is against the rules of {server}. If you wish to return, you will have to change it. Thank you in advance for your understanding and cooperation}
-{=(status):Your status has inappropriate content that is against our rules or [Discord ToS](https://discordapp.com/terms/ "Click me breh"). Please change before returning.}
-{=(dmReason):Your name/profile picture can be taken offensively and goes against our community guidelines. If you'd like to return to {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(dmReason):{if({flag}==):{dmReason}|{{flag}}}}
-{=(modlogReason):{if({flag}==):User was kicked for having blacklisted/offensive words in their name, pfp, or custom status|{flag}}}
-{=(exe):c:}
-{=(erroCmd):{exe}echo Oops! Pass some arguments like `UserID status [example] [r]`. The `r` option will make a reminder.}
-{=(warnCmd):warn {culprit} {dmReason}}
-{=(kickCmd):kick {culprit} {modlogReason}}
-{=(rCmd):rm 12h -i `{culprit}` Check and see if this user rejoined with blacklisted {flag}}
-{=(done):{exe}echo You chose no reminders for this action. All done.}
-{=(step1):{exe}{if({culprit}==):errorCmd|{warnCmd}}}
-{=(step2):{exe}{if({culprit}==):errorCmd|{kickCmd}}}
-{=(step3):{exe}{if({culprit}==):errorCmd|{rCmd}}}
-{=(Stop1):{if({args(4)}==r):step3|done}}
-{=(run):{if({contains({args(2)}):{flag}}==true):{step1} {{step2}} {{{Stop1}}}|erroCmd}}
-{=(IO):{if({1}!=):run|erroCmd}}
-{{{IO}}}
-
-
-
-
-
-{=(list):name pfp status}
-{=(flag):{2}}
-{=():}
-{=(flag):{if({contains({flag}):{list}}==true):{flag}|}}
-{=(culprit):{if({target}=={user}):{1}|{target(id)}}}
-{=(pfp):Your profile picture is extremely inappropriate and can be taken offensively and/or it's against our server rules and guidelines. If you'd like to rejoin {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(name):Your name contains a blacklisted word{if({join(, ):{args(3+)}}==):| ({join(, ):{args(3+)}})} and is against the rules of {server}. If you wish to return, you will have to change it. Thank you in advance for your understanding and cooperation}
-{=(status):Your status has inappropriate content that is against our rules or [Discord ToS](https://discordapp.com/terms/ "Click me breh"). Please change before returning.}
-{=(dmReason):Your name/profile picture can be taken offensively and goes against our community guidelines. If you'd like to return to {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(dmReason):{if({flag}==):{dmReason}|{{flag}}}}
-{=(modlogReason):{if({flag}==):User was kicked for having blacklisted/offensive words in their name, pfp, or custom status|{flag}}}
-{=(switch):c:}
-{=(exe):{if({args(1)}==):{break({args(1)}==):REEEE}|c:}}
-{=(thow):echo}
-{=(errorCmd):{exe}{throw} Oops! Pass some arguments like `UserID status [example] [r]`. The `r` option will make a reminder.}
-{=(warnCmd):warn {culprit} {dmReason}}
-{=(kickCmd):kick {culprit} {modlogReason}}
-{=(rCmd):rm 12h -i `{culprit}` Check and see if this user rejoined with blacklisted {flag}}
-{=(done):{exe}{throw} You chose no reminders for this action. RIP}
-{=(step1):{exe}{if({culprit}==):errorCmd|{warnCmd}}}
-{=(step2):{exe}{if({culprit}==):errorCmd|{kickCmd}}}
-{=(step3):{exe}{if({culprit}==):errorCmd|{rCmd}}}
-{=(Stop1):{if({args(4)}==r):step3|done}}
-{=(run):{if({contains({args(2)}):{flag}}==true):{step1} {{step2}} {{{Stop1}}}|errorCmd}}
-{=(IO):{if({1}!=):errorCmd|erroCmd}}
-{{{{IO}}}}
-
-
-
-
-{=(list):name pfp status}
-{=(flag):{2}}
-{=(flag):{if({contains({flag}):{list}}==true):{flag}|}}
-{=(culprit):{if({target}=={user}):{1}|{target(id)}}}
-{=(pfp):Your profile picture is extremely inappropriate and can be taken offensively and/or it's against our server rules and guidelines. If you'd like to rejoin {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(name):Your name contains a blacklisted word{if({join(, ):{args(3+)}}==):| ({join(, ):{args(3+)}})} and is against the rules of {server}. If you wish to return, you will have to change it. Thank you in advance for your understanding and cooperation}
-{=(status):Your status has inappropriate content that is against our rules or [Discord ToS](https://discordapp.com/terms/ "Click me breh"). Please change before returning.}
-{=(dmReason):Your name/profile picture can be taken offensively and goes against our community guidelines. If you'd like to return to {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(dmReason):{if({flag}==):{dmReason}|{{flag}}}}
-{=(modlogReason):{if({flag}==):User was kicked for having blacklisted/offensive words in their name, pfp, or custom status|{flag}}}
-{=(exe):{if({args(1)}==):{break({args(1)}==):REEEEEE}|c:}}
-{=(erroCmd):{exe}echo Oops! Pass some arguments like UserID status [example] [r]. The r option will make a reminder.}
-{=(warnCmd):warn {culprit} {dmReason}}
-{=(kickCmd):kick {culprit} {modlogReason}}
-{=(rCmd):rm 12h -i {culprit} Check and see if this user rejoined with blacklisted {flag}}
-{=(done):{exe}echo You chose no reminders for this action. RIP}
-{=(step1):{exe}{if({culprit}==):errorCmd|{warnCmd}}}
-{=(step2):{exe}{if({culprit}==):errorCmd|{kickCmd}}}
-{=(step3):{exe}{if({culprit}==):errorCmd|{rCmd}}}
-{=(Stop1):{if({args(4)}==r):step3|done}}
-{=(run):{if({contains({args(2)}):{flag}}==true):{step1} {{step2}} {{{Stop1}}}|erroCmd}}
-{=(IO):{if({1}!=):run|exe}}
-{{{IO}}}
-
-
-
-
-{=(list):name pfp status}
-{=(flag):{2}}
-{break({args(1)}!={target(id)}):Wtf are you doing?}
-{=(flag):{if({contains({flag}):{list}}==true):{flag}|}}
-{=(culprit):{if({target}=={user}):{1}|{target(id)}}}
-{=(pfp):Your profile picture is extremely inappropriate and can be taken offensively and/or it's against our server rules and guidelines. If you'd like to rejoin {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(name):Your name contains a blacklisted word{if({join(, ):{args(3)}}!=r):|} and is against the rules of {server}. If you wish to return, you will have to change it. Thank you in advance for your understanding and cooperation}
-{=(status):Your status has inappropriate content that is against our rules or [Discord ToS](https://discordapp.com/terms/ "Click me breh"). Please change before returning.}
-{=(dmReason):Your name/profile picture can be taken offensively and goes against our community guidelines. If you'd like to return to {server}, you'll have to change it. Thanks in advance for understanding.}
-{=(dmReason):{if({flag}==):{dmReason}|{{flag}}}}
-{=(modlogReason):{if({flag}==):User was kicked for having blacklisted/offensive words in their name, pfp, or custom status|{flag}}}
-{=(exe):{if({args(1)}==):{break({args(1)}==):Oops! Pass some arguments like `UserID status [example] [r]`. The r option will make a reminder.}|c:}}
-{=(eCmd):REEE}
-{=(warnCmd):warn {culprit} {dmReason}}
-{=(kickCmd):kick {culprit} {modlogReason}}
-{=(rCmd):rm 12h -i {culprit} Check and see if this user rejoined with blacklisted {flag}}
-{=(done):{exe}echo You chose no reminders for this action. RIP}
-{=(step1):{exe}{if({culprit}==):errorCmd|{warnCmd}}}
-{=(step2):{exe}{if({culprit}==):errorCmd|{kickCmd}}}
-{=(step3):{exe}{if({culprit}==):errorCmd|{rCmd}}}
-{=(Stop1):{if({args(4)}==r):step3|{if({args(3)}==r):step3|done}}}
-{=(run):{if({contains({args(2)}):{flag}}==true):{step1} {{step2}} {{{Stop1}}}|eCmd}}
-{=(IO):{if({1}!={culprit}):exe|run}}
-{{{IO}}}
-
