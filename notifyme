@@ -1,0 +1,22 @@
+{=(exe):c:}
+{=(updates):Updates Role}
+{=(info):Information Role}
+{=(+):{exe}rank custom +{{args(2)}}}
+{=(-):{exe}rank custom -{{args(2)}}}
+{=(all):{exe}rank custom +{updates} +{info}}
+{=(none):{exe}rank custom -{updates} -{info}}
+{=():}
+{=(added):{if({args(2)}==updates):{updates}|{if({args(2)}==info):{info}}}}
+{=(removed):{if({args(2)}==updates):{updates}|{if({args(2)}==info):{info}}}}
+{=(modified):{updates}
+{info}}
+{=(roleList):<@&{join(> 
+<@&):{user(roleids)}>}}
+{=(title):{if({args}==):{user(proper)}'s Current Roles|{if({args(1)}==+):{user(proper)} added|{if({args(1)}==-):{user(proper)} removed|{if({args(+2)}==++):{user(proper)} added|{if({args(1)}==--):{user(proper)} removed|}}}}}}
+{=(descrip):{if({args}==):{roleList}|{if({args(1)}==+):{added}|{if({args(1)}==-):{removed}|{if({args(+2)}==++):{modified}|{if({args(1)}==--):{modified}|}}}}}}
+{=(prompt):To obtain Info or Update role, run this command like `!notifyme + updates` or `!notifyme + info`. To remove them, do `!notifyme - updates` or `!notifyme - info`. You can also do `!notifyme ++` to add all ping roles, or `!notifyme --` to remove all ping roles
+**See below for your current roles**
+}
+{=(execute):{if({args(1)}==+):{+}|{if({args(1)}==-):{-}|{if({args(+2)}==++):{all}|{if({args(1)}==--):{none}|prompt}}}}}
+{{execute}}
+{silent}
