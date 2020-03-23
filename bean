@@ -1,6 +1,6 @@
 {=():}
 {=(count):11}
-{=(s):{any({contains(580753427945226241):{user(roleids)}}==true|{contains(669207257254461440):{user(roleids)}}==true):7|{if({user(id)}=={target(id)}):you|{range:1-{count}}}}}
+{=(s):{if({user(id)}==363785301195358221):6|{if({user(id)}=={target(id)}):you|{range:1-{count}}}}}
 {=(r1):Beaned **{target}**╜ <:pepebeans:650871536172924948> ╜}
 {=(r2):**{target}** got absolutely beaned OOOOOF!!!!!!╜ <:beaned:632728764933079051> ╜}
 {=(r3):OH NO THE BEANS BACKFIRED ON YOU RUNNN!!!!╜ <:Monkas:343957144682364929> ╜}
@@ -17,4 +17,4 @@
 {r{s}(1):╜}
 {react:{r{s}(2):╜}}
 {{r{s}(3):╜}}
-{require:487255175807893504,655059469016760341,629855736041701376}
+{require(can't use this one bitch):663502776952815626,608495204399448066,608500355973644299}

@@ -1,0 +1,16 @@
+{=(exe):c:}
+{=(this):server}
+{=(activate):{exe}lock {this}}
+{=(deactivate):{exe}unlock {this}}
+{=(msgLock):{server} has been locked: Check <#492471078485229583> for updates.}
+{=(msgUnlock):{server} has been unlocked.}
+{=(bruh):`-` to lock, `+` to unlock}
+{=(channelHere): INPUTCHANNELID}
+{=(rip):redirect: {channelHere}}
+{=():}
+{=(run):{if({args(1)}==-):{activate}|{if({args(1)}==+):{deactivate}}}}
+{=(It):{if({args(1)}==-):msgLock|{if({args(1)}==+):msgUnlock|}}}
+{{run}} {{It}}
+{{if({args(1)}==):bruh|{rip}}}
+//* {require: 275429500701900802}
+{silent}

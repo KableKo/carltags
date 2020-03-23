@@ -1,22 +1,30 @@
 {=(exe):c:}
-{=(updates):Updates Role}
-{=(info):Information Role}
-{=(+):{exe}rank custom +{{args(2)}}}
-{=(-):{exe}rank custom -{{args(2)}}}
-{=(all):{exe}rank custom +{updates} +{info}}
-{=(none):{exe}rank custom -{updates} -{info}}
+{=(roles):617267940248518686 617267897311428650 617267880764899358 617267863719510042 617267862549168154 617267849647489041 617267848108048384 617267847508262932 617267846875185185 617267846300303400}
+{=(roleSep):617267940248518686, 617267897311428650, 617267880764899358, 617267863719510042, 617267862549168154, 617267849647489041, 617267848108048384, 617267847508262932, 617267846875185185, 617267846300303400}
+{=(roleNames):coral alien tiffany butterfly ocean cobalt denim bluejay slate midnight}
+{=(var):{index({args(2+)}):{roleNames}}}
+{=(pickup):<@&{join(>
+<@&):{cycle({var}):{roleSep}}>}}
+{=(pickList):<@&{join(>
+<@&):{roles}>}}
+{=(yeet):{args(2+)}}
+{=(these):+ - ++ --}
 {=():}
-{=(added):{if({args(2)}==updates):{updates}|{if({args(2)}==info):{info}}}}
-{=(removed):{if({args(2)}==updates):{updates}|{if({args(2)}==info):{info}}}}
-{=(modified):{updates}
-{info}}
+{=(add):{exe}rank custom +{pickup}}
+{=(remove):{exe}rank custom -{pickup}}
+{=(all):{exe}rank custom +{join( +):{roles}}}
+{=(none):{exe}rank custom -{join( -):{roles}}}
+{=(prompt):Your current roles}
+{=(error):This an error}
 {=(roleList):<@&{join(> 
 <@&):{user(roleids)}>}}
-{=(title):{if({args}==):{user(proper)}'s Current Roles|{if({args(1)}==+):{user(proper)} added|{if({args(1)}==-):{user(proper)} removed|{if({args(+2)}==++):{user(proper)} added|{if({args(1)}==--):{user(proper)} removed|}}}}}}
-{=(descrip):{if({args}==):{roleList}|{if({args(1)}==+):{added}|{if({args(1)}==-):{removed}|{if({args(+2)}==++):{modified}|{if({args(1)}==--):{modified}|}}}}}}
-{=(prompt):To obtain Info or Update role, run this command like `!notifyme + updates` or `!notifyme + info`. To remove them, do `!notifyme - updates` or `!notifyme - info`. You can also do `!notifyme ++` to add all ping roles, or `!notifyme --` to remove all ping roles
-**See below for your current roles**
-}
-{=(execute):{if({args(1)}==+):{+}|{if({args(1)}==-):{-}|{if({args(+2)}==++):{all}|{if({args(1)}==--):{none}|prompt}}}}}
+{=(options):Your options are `{join(`, `):{roleNames}}` or passing `--` to lose all, and `++` to add all}
+{=(title):{if({args}==):{user(proper)}'s Current Roles|{if({args(2)}==):Role Options|{user(proper)}'s role changes}}}
+{=(stepDown):{if({args(2)}==):{options}}}
+{=(descrip):{if({args}==):{roleList}|{if({args}==++):Added — {pickList}|{if({args}==--):Removed — {pickList}|{if({args(1)}==+):Added — {pickup}|{if({args(1)}==-):Removed — {pickup}}}}}}}
+{=(execute):{if({args}==--):{none}|{if({args}==++):{all}|{if({in({args(2)}):{roleNames}}==true):{if({args(1)}==+):{add}|{if({args(1)}==-):{remove}|{if({in({args(2)}):{roleNames}}==true):{if({args(1)}==+):{add}|{if({args(1)}==-):{remove}|{if({contains({args(2)}):{roleNames}}==false):options|prompt}}}}}}}}}}
+{=(ic):{server(icon)}}
+{=(stitle):{title}}
+{=(sname):{server}}
+{=(sdescrip):{descrip}}
 {{execute}}
-{silent}
