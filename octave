@@ -1,14 +1,14 @@
-{=(opt):settings prefix play music dj manage keywords}
+{=(opt):settings prefix play music dj manage keywords perks}
 {=(r0):**Settings Menu:** To access octaves settings walkthru that cover each method of enable/disable settings as well as other guild settings do `_settings` and see bot response.}
-{=(r1):**Change Prefix:**\n`_settings prefix [set/reset]` 
-You can set a new prefix for your server by invoking `_settings prefix set !` where `!` is now your new prefix. To reset prefix, you can ping pass `octave settings prefix reset` to place it back to the default prefix of `_`.}
+{=(r1):**Change Prefix:**\n`_prefix [new prefix goes here/reset]` 
+You can set a new prefix for your server by invoking `_prefix !` where `!` is now your new prefix. To reset prefix, you can pass `octave prefix reset` to place it back to the default prefix of `_`.}
 {=(r2):**Playing Music:**\n`_play,` `_youtube`, `_soundcloud` to get the music going 
 You can also run any of these for general queue management/playback:
 `_pause` • Pause or resume the music player.
 `_stop` • Stop and clear the music player.
 `_skip` • Skip the current music track if you're the requester.
 `_remove` • Remove a song from the queue.
-`_move` • Move the bot to another channel.
+`_summon` • Summons the bot in the voice channel.
 `_shuffle` • Shuffle the music queue.
 `_nowplaying` • Shows what's currently playing.
 `_queue` • Shows the music that's currently queued.
@@ -18,19 +18,23 @@ You can also run any of these for general queue management/playback:
 `_volume` • Set the volume of the music player.
 `_jump` • Set the time marker of the music playback.
 `_bass` • Boost the bass of the music
-`_playm` • Plays the meme requested [`_sbl` to list them]
 `_cleanup` • Clear songs queued by a certain user [`_cu left` to clear tracks from user no longer in voice channel]}
 {=(r3):**Platform Support:**
 Octave pulls in track information and playback from 
-<:youtube:688883689173942302> YouTube
-<:soundcloud:688883983743844495> SoundCloud
-<:dankmemerflush:672618086972522516> Meme SoundBoard
-Keep a look out for Octave Radio (Coming Soon™)}
+<:youtube:688883689173942302> YouTube • Tracks, Playlists, Searches, Links, Streams
+<:soundcloud:688883983743844495> SoundCloud • Tracks, Playlists, Searches, Links
+<a:spotify:637147870566416393> Spotify • Tracks, Playlists, and Albums
+<:twitch:661276238392066065> Twitch • Links to streams
+<a:purple:661142448507977728> Mixer • Links to streams
+<a:feelsmusic:574830750180966400> BandCamp • Links to tracks and albums
+📻 Octave Radio}
 {=(r4):**Go DJ, that's my DJ:**\nHow to make/assign DJ role? 
-From your server menu, make a role and name it DJ. It doesn't matter where this role sits on your server's hiearchy list, just make sure it's the only role named as such. Once that's done, assign this role to any users (yourself included) to allow Octave to recognize the holder of the new role as the DJ for the sessions in play. This role allows users to skip, jump, and otherwise override the queue of other user request.}
+From your server menu, make a role and name it DJ. It doesn't matter where this role sits on your server's hiearchy list, just make sure it's the only role named as such. Once that's done, assign this role to any users (yourself included) to allow Octave to recognize the holder of the new role as the DJ for the sessions in play. This role allows users to skip, jump, and otherwise override the queue of other user request.
+— 
+**A couple of other useful settings might include:**\n`_settings djrole @role`:\nSet any role to the DJrole\n\n`_settings requiredj disable`:\nAllows playback management commands to be used by users without the DJrole.\n\n`_settings djonly enable`:\nDisables commands entirely for any users __without__ the DJrole}
 {=(r5):**Managing Access and Settings:**\nOctave comes stocked with ability to make user access limitations within your server as granular as you can dream. 
 Follow along the bot prompts to change these settings. 
-For example:\nTo make the bot ignore commands in a channel, do `_settings ignore channel [channel] ` or to disable memes from a role you'd do `_settings commands disable specific memes thisRole`. You can adjust command OR category usability by user, role, and/or channel}
+For example:\nTo make the bot ignore commands in a channel, do `_ignore channel [channel]`\nYou can adjust command OR category usability by user, role, and/or channel}
 {=(r6):You can pass these key words `{join(`, `):{opt}}` to view those sections specifically}
 {=(r-1): {r1}\n
 **Playing Music:** `_play,` `_youtube`, `_soundcloud` to get the music going..
@@ -38,15 +42,17 @@ You can also run any of these for general queue adding/removal
 `_pause` • Pause or resume the music player.
 `_stop` • Stop and clear the music player...[`-o play` for more]\n
 {r3}\n
-{r4}\n
 {r5}\n
 {r6}}
+{=(r7):**Patreon Perks**\nYou can sign up to support the development of Octave and become a premium user [here](https://www.patreon.com/join/octavebot)!\n\nCurrent benefits include unlimited track queue, AND tracks up to 12hrs in length! Keep an eye on <#681521570606481418> for the addition of more perks, and review all the tiers at our Patreon page linked above\n\n**Already pledged?**\nYou can redeem your premium benefits by:\n`1.` Linking your discord to your patreon account. See how [here](https://support.patreon.com/hc/en-us/articles/212052266-Get-my-Discord-role)
+`2.` Run `_patron link` with Octave
+`3.` Once you're linked on both, run `_patron servers add` to add premium perks to the server you're in.}
 {=(L1):{lower:{1}}}
 {=(Lopt):{lower:{opt}}}
-{=(content):{if({in({L1}):{Lopt}}==true):{r{index({L1}):{opt}}}|keywords}}
+{=(content):{if({in({L1}):{Lopt}}==true):{r{index({L1}):{opt}}}|{if({args(1)}==perks):perks|keywords}}}
 {=(json):{
     "thumbnail":{
-        "url":"https://cdn.discordapp.com/icons/215616923168276480/a_e252077a94bc0fb8a0884eddbec3aec9.gif",
+        "url":"https://cdn.discordapp.com/attachments/650188087959486465/707015792197107752/4453168-2.gif",
     },
     "author":{
         "name":"Octave Official",
@@ -56,37 +62,4 @@ You can also run any of these for general queue adding/removal
     "type":"rich",
     "description":"{content}",
     "title":"General Controls"}}
-{c:cembed {json}}
-
-{=(opt):off notifs tips passive pirate keywords}
-{=(r0):**Turning off settings:** To turn off any toggled settings, simply run `pls settings [setting] false`.}
-{=(r1):**Notifications:** `pls settings dm notifications true` 
-Turning this off will set the notifs to be sent in your `pls notifs` instead of in your dms.}
-{=(r2):**Tips:** `pls settings tips true` 
-Tips are normally used for useful information about the bot to be sent randomly when you run commands}
-{=(r3):**Passive:** `pls settings passive true`
-This setting **on** makes you impervious to bankrobs or robs by others. Item buffs for stealing cannot be used by you, nor can you steal from others. **CAUTION** 6h cooldown until you can re-enable if turned off.}
-{=(r4):**Pirate Speak:** `pls settings pirate speak true` 
-Pirate speak brings in Johnny Depp Dank Memer to type or “speak” like a pirate while you use commands, this ye setting is just f'arghh fun!}
-{=(r5):You can pass these key words `{join(`, `):{opt}}` to view those settings sections specifically}
-{=(r-1): {r1}\n
-{r2}\n
-{r3}\n
-{r4}\n
-*Turn off any of these by running `pls settings [setting] false`}
-{=(L1):{lower:{1}}}
-{=(Lopt):{lower:{opt}}}
-{=(content):{if({in({L1}):{Lopt}}==true):{r{index({L1}):{opt}}}|keywords}}
-{=(json):{
-    "thumbnail":{
-        "url":"https://i.imgur.com/HfA2mui.png",
-    },
-    "author":{
-        "name":"Settings Information",
-        "icon_url":"https://cdn.discordapp.com/emojis/605610817680834601.gif?v=1",
-    },
-    "color":11176191,
-    "type":"rich",
-    "description":"{content}",
-    "title":"How to set up settings?"}}
 {c:cembed {json}}
