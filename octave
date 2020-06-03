@@ -1,8 +1,8 @@
-{=(opt):settings prefix play music dj manage keywords perks}
+{=(opt):settings prefix play music dj manage keywords perks noaudio playlists radio}
 {=(r0):**Settings Menu:** To access octaves settings walkthru that cover each method of enable/disable settings as well as other guild settings do `_settings` and see bot response.}
 {=(r1):**Change Prefix:**\n`_prefix [new prefix goes here/reset]` 
 You can set a new prefix for your server by invoking `_prefix !` where `!` is now your new prefix. To reset prefix, you can pass `octave prefix reset` to place it back to the default prefix of `_`.}
-{=(r2):**Playing Music:**\n`_play,` `_youtube`, `_soundcloud` to get the music going 
+{=(r2):**Playing Music:**\n`_play`, `_youtube`, `_soundcloud` to get the music going 
 You can also run any of these for general queue management/playback:
 `_pause` • Pause or resume the music player.
 `_stop` • Stop and clear the music player.
@@ -11,11 +11,14 @@ You can also run any of these for general queue management/playback:
 `_summon` • Summons the bot in the voice channel.
 `_shuffle` • Shuffle the music queue.
 `_nowplaying` • Shows what's currently playing.
+`_playnext` • Adds a song at the start of the queue.
+`_move` • Moves tracks within the queue. For instance `_move 5 6` moves the fifth song in the queue to the 6th place.
 `_queue` • Shows the music that's currently queued.
 `_restart` • Restart the current song.
 `_repeat` • Set if the music player should repeat.
 `_voteskip` • Vote to skip the current music track.
 `_volume` • Set the volume of the music player.
+`_move` • Moves a song from the queue.
 `_jump` • Set the time marker of the music playback.
 `_bass` • Boost the bass of the music
 `_cleanup` • Clear songs queued by a certain user [`_cu left` to clear tracks from user no longer in voice channel]}
@@ -27,11 +30,12 @@ Octave pulls in track information and playback from
 <:twitch:661276238392066065> Twitch • Links to streams
 <a:purple:661142448507977728> Mixer • Links to streams
 <a:feelsmusic:574830750180966400> BandCamp • Links to tracks and albums
-📻 Octave Radio}
+📻 Octave Radio
+📂 Discord Attachments}
 {=(r4):**Go DJ, that's my DJ:**\nHow to make/assign DJ role? 
 From your server menu, make a role and name it DJ. It doesn't matter where this role sits on your server's hiearchy list, just make sure it's the only role named as such. Once that's done, assign this role to any users (yourself included) to allow Octave to recognize the holder of the new role as the DJ for the sessions in play. This role allows users to skip, jump, and otherwise override the queue of other user request.
 — 
-**A couple of other useful settings might include:**\n`_settings djrole @role`:\nSet any role to the DJrole\n\n`_settings requiredj disable`:\nAllows playback management commands to be used by users without the DJrole.\n\n`_settings djonly enable`:\nDisables commands entirely for any users __without__ the DJrole}
+**A couple of other useful settings might include:**\n`_settings djrole rolename`:\nSet any role to the DJ role\n\n`_settings requiredj disable`:\nAllows playback management commands to be used by users without the DJ role.\n\n`_settings djonly enable`:\nDisables commands entirely for any users __without__ the DJ role.\n\n`_settings djrolesadd rolename`:\nAdds extra DJ roles.\n\n`_settings djroleslist`:\nLists all of the extra DJ roles you've set.\n\n`_settings djrolesremove rolename`:\nRemoves extra DJ roles.}
 {=(r5):**Managing Access and Settings:**\nOctave comes stocked with ability to make user access limitations within your server as granular as you can dream. 
 Follow along the bot prompts to change these settings. 
 For example:\nTo make the bot ignore commands in a channel, do `_ignore channel [channel]`\nYou can adjust command OR category usability by user, role, and/or channel}
@@ -44,9 +48,24 @@ You can also run any of these for general queue adding/removal
 {r3}\n
 {r5}\n
 {r6}}
-{=(r7):**Patreon Perks**\nYou can sign up to support the development of Octave and become a premium user [here](https://www.patreon.com/join/octavebot)!\n\nCurrent benefits include unlimited track queue, AND tracks up to 12hrs in length! Keep an eye on <#681521570606481418> for the addition of more perks, and review all the tiers at our Patreon page linked above\n\n**Already pledged?**\nYou can redeem your premium benefits by:\n`1.` Linking your discord to your patreon account. See how [here](https://support.patreon.com/hc/en-us/articles/212052266-Get-my-Discord-role)
+{=(r7):**Patreon Perks**\nYou can sign up to support the development of Octave and become a premium user [here](https://www.patreon.com/join/octavebot)!\n\nCurrent benefits include unlimited track queue, tracks up to 12hrs in length, a 24/7 mode, AND unlimited custom playlists! Keep an eye on <#681521570606481418> for the addition of more perks, and review all the tiers at our Patreon page linked above\n\n**Already pledged?**\nYou can redeem your premium benefits by:\n`1.` Linking your discord to your patreon account. See how [here](https://support.patreon.com/hc/en-us/articles/212052266-Get-my-Discord-role)
 `2.` Run `_patron link` with Octave
 `3.` Once you're linked on both, run `_patron servers add` to add premium perks to the server you're in.}
+{=(r8):**Troubleshooting no audio from Octave:**\n1. Look above your username card (with the mute/deafen/settings icons) -- does it say `Voice Connected`? If not, check your firewall and internet connection.
+If it says RTC connecting, consider downloading the Discord desktop client, or try another web browser.
+2. [Check that you're not deafened](https://i.imgur.com/YJsv9kN.png)
+3. [Check that you're not server deafened](https://i.imgur.com/zJV1wWe.png)
+4. [Check that you have the bot turned up](https://i.imgur.com/hAQqS33.png)
+5. Check that the bot is not paused. (You should be able to tell based on whether there's a green ring around the bot). You can resume the bot with `_play`.
+6. Check that the bot is playing a track. (You can check this now `_np`).
+7. Check that the bot's player volume is not turned down (`_volume`).
+8. [Check your output device](https://i.imgur.com/oPAko1z.png)
+9. [Check your Windows volume (applicable to Windows users only)](https://i.imgur.com/P2GN3zF.png)
+
+
+_Click the links that are in blue to see an image preview._}
+{=(r9):**How to make playlists on Octave?**\n\n`_playlists create <your playlist name>`\nThis creates a new custom playlist to the bot.\n\n`_playlists delete <your playlist name>`\nThis deletes one of your custom playlist from the bot.\n\n`_playlists edit <your playlist name>`\nThis edits your custom playlist.\n\n`_playlists import <link>`\nThis imports a playlist from YouTube/SoundCloud/Spotify etc.\n\n`_playlists list`\nThis lists all of your custom playlists on the bot.\n\n`_playlists load <your playlist name>`\nThis loads a custom playlist for playing.}
+{=(r10):**Are we allowed to use custom playlists as a radio station, if so how can we do it?**\nYes, you can use custom playlists as a radio station. To play it as a radio station, do `_radio custom <your playlist name>`.\n\n**Can we still play the preset radio stations that were already on the bot?**\nYes, you can still play the preset radio stations `_radio discordfm <radio station name>`.\n\n**How can I stop the radio station?**\n`_radio stop`}
 {=(L1):{lower:{1}}}
 {=(Lopt):{lower:{opt}}}
 {=(content):{if({in({L1}):{Lopt}}==true):{r{index({L1}):{opt}}}|{if({args(1)}==perks):perks|keywords}}}
