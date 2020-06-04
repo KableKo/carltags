@@ -1,4 +1,4 @@
-{=(opt):settings prefix play music dj manage keywords perks noaudio pl radio}
+{=(opt):settings prefix play music dj manage keywords perks noaudio pl radio vl}
 {=(r0):**Settings Menu:** To access octaves settings walkthru that cover each method of enable/disable settings as well as other guild settings do `_settings` and see bot response.}
 {=(r1):**Change Prefix:**\n`_prefix [new prefix goes here/reset]` 
 You can set a new prefix for your server by invoking `_prefix !` where `!` is now your new prefix. To reset prefix, you can pass `octave prefix reset` to place it back to the default prefix of `_`.}
@@ -66,6 +66,7 @@ If it says RTC connecting, consider downloading the Discord desktop client, or t
 _Click the links that are in blue to see an image preview._}
 {=(r9):**How to make playlists on Octave?**\n\n`_playlists create <your playlist name>`\nThis creates a new custom playlist to the bot.\n\n`_playlists delete <your playlist name>`\nThis deletes one of your custom playlist from the bot.\n\n`_playlists edit <your playlist name>`\nThis edits your custom playlist.\n\n`_playlists import <link>`\nThis imports a playlist from YouTube/SoundCloud/Spotify etc.\n\n`_playlists list`\nThis lists all of your custom playlists on the bot.\n\n`_playlists load <your playlist name>`\nThis loads a custom playlist for playing.}
 {=(r10):**Are we allowed to use custom playlists as a radio station, if so how can we do it?**\nYes, you can use custom playlists as a radio station. To play it as a radio station, do `_radio custom <your playlist name>`.\n\n**Can we still play the preset radio stations that were already on the bot?**\nYes, you can still play the preset radio stations `_radio discordfm <radio station name>`.\n\n**How can I stop the radio station?**\n`_radio stop`}
+{=(r11):**Why did volume/bassboost/filters stop working for me?**\nThis is recently changed to be a patreon perk which you can find as a perk on our patreon [here by clicking this blue link](https://www.patreon.com/octavebot?join). We know this sucks, and a lot of you added Octave for the sake of free volume, but unfortunately we can't both lose our growth AND be in the negatives for monthly income. Hopefully it won't always be this way, once things get more stable. But with the cost of performance for everything being free, we don't have the money to keep expanding servers for free volume to keep existing.}
 {=(L1):{lower:{1}}}
 {=(Lopt):{lower:{opt}}}
 {=(content):{if({in({L1}):{Lopt}}==true):{r{index({L1}):{opt}}}|{if({args(1)}==perks):perks|keywords}}}
