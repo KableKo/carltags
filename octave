@@ -1,4 +1,4 @@
-{=(opt):settings prefix play music dj manage keywords perks noaudio playlists radio vl idea}
+{=(opt):settings prefix play music dj manage keywords perks noaudio pl radio vl idea}
 {=(r0):**Settings Menu:** To access octaves settings walkthru that cover each method of enable/disable settings as well as other guild settings do `_settings` and see bot response.}
 {=(r1):**Change Prefix:**\n`_prefix [new prefix goes here/reset]` 
 You can set a new prefix for your server by invoking `_prefix !` where `!` is now your new prefix. To reset prefix, you can pass `octave prefix reset` to place it back to the default prefix of `_`.}
