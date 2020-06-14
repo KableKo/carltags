@@ -18,7 +18,8 @@ You can also run any of these for general queue management/playback:
 `_repeat` • Set if the music player should repeat.
 `_voteskip` • Vote to skip the current music track.
 `_jump` • Set the time marker of the music playback.
-`_cleanup` • Clear songs queued by a certain user [`_cu left` to clear tracks from user no longer in voice channel]}
+`_cleanup` • Clear songs queued by a certain user [`_cu left` to clear tracks from user no longer in voice channel]
+`_skipto` • Skips the current music track to a certain song in the queue. For instance `_skipto 3` will skip to 3rd song in the queue.}
 {=(r3):**Platform Support:**
 Octave pulls in track information and playback from 
 <:youtube:688883689173942302> YouTube • Tracks, Playlists, Searches, Links, Streams
