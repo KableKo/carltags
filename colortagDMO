@@ -1,0 +1,35 @@
+
+
+
+
+
+{=(exe):c:}
+{=(roles):629890862238924820 576455849816358922 562302986152312859 562302989172211739 562302991026094147 562337315117203456 562347240107016232 562337312751484931 562302992607477812 562343650085044285 562337309417144350 562302983086276622}
+{=(roleSep):629890862238924820, 576455849816358922, 562302986152312859, 562302989172211739, 562302991026094147, 562337315117203456, 562347240107016232, 562337312751484931, 562302992607477812, 562343650085044285, 562337309417144350, 562302983086276622}
+{=(roleNames):edgy blurple green red purple orange lemon caribbean salmon sunset pink lilac}
+{=(var):{index({args(2+)}):{roleNames}}}
+{=(pickup):<@&{join(>
+<@&):{cycle({var}):{roleSep}}>}}
+{=(pickList):<@&{join(>
+<@&):{roles}>}}
+{=(yeet):{args(2+)}}
+{=(these):+ - ++ --}
+{=():}
+{=(add):{exe}rank custom +{pickup}}
+{=(remove):{exe}rank custom -{pickup}}
+{=(all):{exe}rank custom +{join( +):{roles}}}
+{=(none):{exe}rank custom -{join( -):{roles}}}
+{=(prompt):Your current roles}
+{=(error):This an error}
+{=(roleList):<@&{join(> 
+<@&):{user(roleids)}>}}
+{=(options):Your options are `{join(`, `):{roleNames}}`}
+{=(title):{if({args}==):{user(proper)}'s Current Roles|{if({args(2)}==):Role Options|{user(proper)}'s role changes}}}
+{=(stepDown):{if({args(2)}==):{options}}}
+{=(descrip):{if({args}==):{roleList}|{if({args(1)}==+):Added — {pickup}|{if({args(1)}==-):Removed — {pickup}}}}}
+{=(execute):{if({args}==--):{none}|{if({args}==++):{all}|{if({in({args(2)}):{roleNames}}==true):{if({args(1)}==+):{add}|{if({args(1)}==-):{remove}|{if({in({args(2)}):{roleNames}}==true):{if({args(1)}==+):{add}|{if({args(1)}==-):{remove}|{if({contains({args(2)}):{roleNames}}==false):options|prompt}}}}}}}}}}
+{=(ic):{server(icon)}}
+{=(stitle):{title}}
+{=(sname):{server}}
+{=(sdescrip):{descrip}}
+{{execute}}

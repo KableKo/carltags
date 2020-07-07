@@ -1,0 +1,81 @@
+{=():}
+{=(comment1):set up server logs}
+{=(i1):log aio}
+
+{=(comment2):create the modlog}
+{=(i2):modlog create modlog}
+
+{=(comment3):create and set a starboard channel}
+{=(i3):starboard}
+
+{=(comment4):create a Mod role}
+{=(comment5):set Mod as the modrole}
+{=(i4):role create Mod #FF0000 true true}
+{=(i5):modrole Mod}
+
+{=(comment6):create a suggestion channel}
+{=(comment7):create a suggestion log channel}
+{=(i6):suggestion channel}
+{=(i7):suggestion move}
+
+{=(invitespamrate):1 1}
+{=(comment8):set invitespam setting to {invitespamrate(1)} invite(s) per {invitespamrate(2)} second(s)}
+{=(comment9):flip invitespam module to whitelist mode}
+{=(comment10):set invitespam punishment to delete, mute, and defer to drama channel}
+{=(i8):invitespam {invitespamrate}}
+{=(i9):invitespam block}
+{=(i10):invitespam p delete, mute, defer}
+
+{=(spamrate):5 10}
+{=(comment11):set the spam setting to {spamrate(1)} message(s) in {spamrate(2)} second(s)}
+{=(comment12):set the spam punishment to delete, warn, and a 1 minute mute}
+{=(i11):sm {spamrate}}
+{=(i12):sm p delete, warn, tempmute 1m}
+
+{=(mentionspamrate):5 30}
+{=(comment13):set the mention spam setting to {mentionspamrate(1)} mention(s) in {mentionspamrate(2)} second(s)}
+{=(comment14):set the mention spam punishments to delete, warn, a 5 minute mute, and defer to drama channel}
+{=(i13):mentionspam {mentionspamrate}}
+{=(i14):mentionspam p delete, warn, tempmute 5m, defer}
+
+{=(warnthreshold):5}
+{=(comment15):set the warn threshold to {warnthreshold} warn(s)}
+{=(comment16):set the warn threshold punishment to permanent mute}
+{=(i15):am warn {warnthreshold}}
+{=(i16):am wp mute}
+
+{=(filespamrate):3 18}
+{=(comment17):set the attachment spam setting to {filespamrate(1)} file(s) in {filespamrate(2)} second(s)}
+{=(comment18):set the attachment spam punishments to delete, warn, a 5 minute mute, and defer to drama channel}
+{=(i17):attachmentspam {filespamrate}}
+{=(i18):attachmentspam p delete, warn, tempmute 5m, defer}
+
+{=(comment19):create a basic bad words list}
+{=(comment20):set the bad words punishments to delete, warn, a 1 minute mute, and defer to drama channel}
+{=(i19):censor nigger negro chink kike faggot etard}
+{=(i20):censor p delete, warn, tempmute 1m, defer}
+
+{=(wait):
+__**Please wait 10+ seconds**__ before using the setup tag again to ensure the bot does not hit the tag execution rate limit.}
+{=(comment21):instruct the user to run a command the tag can't}
+{=(i21):echo **STEP 21 of 24**: Execute `@Carl-bot#1536 tag modonly` until Carl-bot replies with `Only mods can manage tags now.`}
+
+{=(comment22):instruct the user to run a command the tag can't}
+{=(i22):echo **STEP 22 of 24**: Execute `@Carl-bot#1536 rr cc` to have Carl-bot create a channel for you to make a reaction role message in. You can rename it after.}
+
+{=(comment23):instruct the user to run a command the tag can't}
+{=(i23):echo **STEP 23 of 24**: Create a channel you want reports sent to, then execute `@Carl-bot#1536 reportchannel #reports` (or whatever you named it)}
+
+{=(comment24):create a muterole}
+{=(i24):muterole create}
+
+{=(json):{"fields":[{"name":"Step 1:","value":"Executes `{i1}` to {comment1}.","inline":false},{"name":"Step 2:","value":"Executes `{i2}` to {comment2}.","inline":false},{"name":"Step 3:","value":"Executes `{i3}` to {comment3}.","inline":false},{"name":"Step 4:","value":"Executes `{i4}` to {comment4}.","inline":false},{"name":"Step 5:","value":"Executes `{i5}` to {comment5}.","inline":false},{"name":"Step 6:","value":"Executes `{i6}` to {comment6}.","inline":false},{"name":"Step 7:","value":"Executes `{i7}` to {comment7}.","inline":false},{"name":"Step 8:","value":"Executes `{i8}` to {comment8}.","inline":false},{"name":"Step 9:","value":"Executes `{i9}` to {comment9}.","inline":false},{"name":"Step 10:","value":"Executes `{i10}` to {comment10}.","inline":false},{"name":"Step 11:","value":"Executes `{i11}` to {comment11}.","inline":false},{"name":"Step 12:","value":"Executes `{i12}` to {comment12}.","inline":false},{"name":"Step 13:","value":"Executes `{i13}` to {comment13}.","inline":false},{"name":"Step 14:","value":"Executes `{i14}` to {comment14}.","inline":false},{"name":"Step 15:","value":"Executes `{i15}` to {comment15}.","inline":false},{"name":"Step 16:","value":"Executes `{i16}` to {comment16}.","inline":false},{"name":"Step 17:","value":"Executes `{i17}` to {comment17}.","inline":false},{"name":"Step 18:","value":"Executes `{i18}` to {comment18}.","inline":false},{"name":"Step 19:","value":"Executes `{i19}` to {comment19}.","inline":false},{"name":"Step 20:","value":"Executes `{i20}` to {comment20}.","inline":false},{"name":"Step 21:","value":"Instructs the user to execute `@Carl-bot#1536 tag modonly` until Carl-bot replies with `Only mods can manage tags now.`","inline":false},{"name":"Step 22:","value":"Instructs the user to execute `@Carl-bot#1536 rr cc` to have Carl-bot create a channel for you to make a reaction role message in.","inline":false},{"name":"Step 23:","value":"Instructs the user to create a channel for receiving reports and to execute `@Carl-bot#1536 reportchannel #reports`","inline":false},{"name":"Step 24:","value":"Executes `{i24}` to {comment24}.","inline":false}],"color":3092790}}
+
+
+{=(error2):To run this command manually, you must follow it with a setup step number between 1 and 24.
+Do `@Carl-bot#1536 setup help` to see the list of the steps and what they do.}
+{=(error1):You have already used this setup command more than 24 times. {error2}}
+
+{=(num):{if({1}!=):{if({m:{1}}=={m:{1}/1}):{m:trunc({1})}|25}|{uses}}}
+{{all({num}<25|{num}>0):c:{i{num}}|{if({1}==help):c:cembed {channel(id)} {json}|{all({num}>24|{1}!=):error2|error1}}}}
+{all({num}<25|{num}>0|{i{num}(1)}!=echo):**STEP {num} of 24**: Executed `{i{num}}` to "{comment{num}}".}{all({num}<25|{num}>0):{wait}}

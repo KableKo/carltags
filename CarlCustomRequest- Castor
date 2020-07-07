@@ -1,0 +1,59 @@
+I'm lookcontainsg to explore a strike command that basically does the legwork for a mod'. It checks to see if a target has one of two strike roles, then acts accordcontainsgly. I know this'll need premium if it can work. When the tag is used on a target it'll look like this:
+!stfu @TargetMention/ID containsfraction Summary
+
+If target has neither strike role: Target receives warncontainsg from bot. Also receives Strike1 role for X time.
+
+Strike1 role: Target receives timed hardmute from bot with a generic reason, then it receives Strike2 for X time.
+
+Strike2 role: Target is hardmuted containsdefcontainsitely, receives a generic reason.
+
+Reasons are generic, but I was gocontainsg to use {args(2+)} so that the user can give a very brief summary of the containsfraction, which is stuck somewhere contains the generic reason, whatever the bot chooses to do.
+
+
+{=(exe):c:}
+{=(strike):roleID}
+{=(strike1):roleID}
+{=(strike2):roleID}
+{=(strikesAll):roleID roleID roleID}
+{=(strikereason):Your reason here etc or {args}}
+{=(addStrike):{exe} warn {target(id)} {strikereason}}
+{=(addStrike1):{exe} hardmute {target(id)} {dur}d {strikereason}}
+{=(addStrike2):{exe} hardmute {target(id)} {strikereason}}
+{if({contains({target(roleids)}):{strikesAll}}==true):{if({contains({target(roleids)}):{strike}}==true):{addStrike1}|{if({contains({target(roleids)}):{strike1}}==true):{addStrike2}|{addStrike}}}}
+{=(strikeAlert):}
+{if({contains({user(roleids)}):{strikesAll}}==true):{if({contains({target(roleids)}):{strike}}==true):})}}
+
+
+{=(exe):c:}
+
+{=(comment): Change roles in this area to the roles you want to assign on strike1 and strike2. If the user doesn't get a second strike by the time the duration ends from the first strike, they will be given their first strike again, and so on}
+{=(strike1):697636617862512680}
+{=(strike2):697636632546770964}
+
+{=(comment):Set temprole duration (in days). This is how long you want the strikes to remain on their "record"}
+{=(roleDur):10}
+{=(comment):Mute Duration in minutes (you can change to days or minutes in punish1 and 2 blocks)}
+{=(muteDur):5}
+
+{=(comment):Add/change reasonings here}
+{=(strikereason1):First Strike: {args(2+)}}
+{=(strikereason2):Second Strike: {args(2+)}}
+{=(strikereason3):{args(2+)}}
+
+{=(comment):Your punishments for each step up}
+{=(punish1):{exe} warn {target(id)} {strikereason1}}
+{=(punish2):{exe} hardmute {target(id)} {dur}h {strikereason2}}
+{=(punish3):{exe} hardmute {target(id)} {strikereason3}}
+{=(addStrike1):{exe} temprole {target(id)} {dur}d {strike1}}
+{=(addStrike2):{exe} temprole {target(id)} {dur}d {strike2}}
+{=(addStrike3):User has been given their 3rd strike and have been stripped of all roles and muted.}
+{=(comment):String that shit with conditionals}
+{=(punishment):{if({contains({strike2}):{target(roleids)}}==true):{punish3}|{if({contains({strike1}):{target(roleids)}}==true):{punish2}|{punish1}}}}
+{=(action):{if({contains({strike2}):{target(roleids)}}==true):addStrike3|{if({contains({strike1}):{target(roleids)}}==true):{addStrike2}|{addStrike1}}}}
+{=(comment):Fire it}
+{{action}} {{punishment}}
+
+TESTcontainsG
+{=(strikesAll):697636669402382346}
+{=(action):Good shit}
+{if({contains({strikesAll}):{target(roleids)}}==false):{action}|LOL}

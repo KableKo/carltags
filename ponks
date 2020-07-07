@@ -1,0 +1,37 @@
+!tag + list {=(mem):<@​{join(>
+<@​):{if({args(1)}==mem):{args(2+)}|{args}}>}
+
+{=(chan):<#{join(>
+<#):{args(2+)}}>}
+
+{=(roles):<@​&{join(>
+<@​&):{args(2+)}}>}
+
+{{if({args(1)}==roles):roles|{if({args(1)}==chan):chan|mem}}}
+{require(Didn't see you on the mod list LOL):487255175807893504}
+
+
+{=(mem):<@​{join(> 
+<@​):{if({args(1)}==mem):{args(2+)}|{args}}}>}
+
+{=(chan):<#{join(> 
+<#):{args(2)}}>}
+
+{=(roles):<@​&{join(> 
+<@​&):{args(2)}}>}
+
+{{if({args(1)}==roles):roles|{if({args(1)}==chan):chan|mem}}}
+
+<@{join(>
+<@):{args}>}
+{=(mem):<@​{join(>
+<@​):{args}}>}
+{=(chan):<#{join(>
+<#):{args}}>}
+{=(roles):<@​&{join(>
+<@​&):{args}}>}
+{{if({args(1)}==roles):roles|{if({args(1)}==chan):chan|mem}}}
+{require(pfft, you can't use this):487255175807893504}
+
+{if({args(2)}=!roles):doot|c: embed 939393 Role List | <@&{join(>
+<@&):{args(2+)}}>}

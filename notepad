@@ -1,0 +1,78 @@
+{=(event):Spell **B O M B** Event}
+{=(exe):c:}
+{=(this):feed}
+{=(e):echo}
+{=(in):{channel(id)}}
+{=(d1):{exe}{this} announce b1 {event}}
+{=(d2):{exe}{this} announce b2 {event}}
+{=(d3):{exe}{this} announce b3 {event}}
+{=(d4):{exe}{this} announce b4 {event}}
+{=(d5):{exe}{this} announce b5 {event}}
+{=(msg):Oh boy! <a:FingerWave:667291520151584769> This channel doesn't have events in it. Are you trying to cause trouble?}
+{=(fault):{exe}{e} {msg}}
+{=(run):{if({channel(id)}==663111235939860494):d1|{if({channel(id)}==661656716336693278):d2|{if({channel(id)}==663279393128316928):d3|{if({channel(id)}==692036526170963989):d4|{if({channel(id)}==698161351272693811):d5|fault}}}}}}
+
+663111235939860494 661656716336693278 663279393128316928 692036526170963989 698161351272693811
+
+-tag + cheese {=(event):Here's a **CHEESE** Event!}
+{=(exe):c:}
+{=(this):feed}
+{=(e):echo}
+{=(in):{channel(id)}}
+{=(d1):{exe}{this} announce c1 {event}}
+{=(d2):{exe}{this} announce c2 {event}}
+{=(d3):{exe}{this} announce c3 {event}}
+{=(d4):{exe}{this} announce c4 {event}}
+{=(d5):{exe}{this} announce c5 {event}}
+{=(msg):Oh boy! <a:FingerWave:667291520151584769> This channel doesn't have events in it. Are you trying to cause trouble?}
+{=(fault):{exe}{e} {msg}}
+{=(run):{if({channel(id)}==663111235939860494):d1|{if({channel(id)}==661656716336693278):d2|{if({channel(id)}==663279393128316928):d3|{if({channel(id)}==692036526170963989):d4|{if({channel(id)}==698161351272693811):d5|fault}}}}}}
+{override}
+
+
+-tag + karen {=(event):Here's a **Speak to your manager** event!}
+{=(exe):c:}
+{=(this):feed}
+{=(e):echo}
+{=(in):{channel(id)}}
+{=(d1):{exe}{this} announce k1 {event}}
+{=(d2):{exe}{this} announce k2 {event}}
+{=(d3):{exe}{this} announce k3 {event}}
+{=(d4):{exe}{this} announce k4 {event}}
+{=(d5):{exe}{this} announce k5 {event}}
+{=(msg):Oh boy! <a:FingerWave:667291520151584769> This channel doesn't have events in it. Are you trying to cause trouble?}
+{=(fault):{exe}{e} {msg}}
+{=(run):{if({channel(id)}==663111235939860494):d1|{if({channel(id)}==661656716336693278):d2|{if({channel(id)}==663279393128316928):d3|{if({channel(id)}==692036526170963989):d4|{if({channel(id)}==698161351272693811):d5|fault}}}}}}
+{override}
+
+
+-tag + drink {=(event):Here's a **DRINK** event!}
+{=(exe):c:}
+{=(this):feed}
+{=(e):echo}
+{=(in):{channel(id)}}
+{=(d1):{exe}{this} announce dd1 {event}}
+{=(d2):{exe}{this} announce dd2 {event}}
+{=(d3):{exe}{this} announce dd3 {event}}
+{=(d4):{exe}{this} announce dd4 {event}}
+{=(d5):{exe}{this} announce dd5 {event}}
+{=(msg):Oh boy! <a:FingerWave:667291520151584769> This channel doesn't have events in it. Are you trying to cause trouble?}
+{=(fault):{exe}{e} {msg}}
+{=(run):{if({channel(id)}==663111235939860494):d1|{if({channel(id)}==661656716336693278):d2|{if({channel(id)}==663279393128316928):d3|{if({channel(id)}==692036526170963989):d4|{if({channel(id)}==698161351272693811):d5|fault}}}}}}
+{override}
+
+
+-tag + coinbomb {=(event):Throwing **COINBOMBS**!}
+{=(exe):c:}
+{=(this):feed}
+{=(e):echo}
+{=(in):{channel(id)}}
+{=(d1):{exe}{this} announce cb1 {event}}
+{=(d2):{exe}{this} announce cb2 {event}}
+{=(d3):{exe}{this} announce cb3 {event}}
+{=(d4):{exe}{this} announce cb4 {event}}
+{=(d5):{exe}{this} announce cb5 {event}}
+{=(msg):Oh boy! <a:FingerWave:667291520151584769> This channel doesn't have events in it. Are you trying to cause trouble?}
+{=(fault):{exe}{e} {msg}}
+{=(run):{if({channel(id)}==663111235939860494):d1|{if({channel(id)}==661656716336693278):d2|{if({channel(id)}==663279393128316928):d3|{if({channel(id)}==692036526170963989):d4|{if({channel(id)}==698161351272693811):d5|fault}}}}}}
+{override}
