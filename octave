@@ -36,7 +36,7 @@ From your server menu, make a role and name it DJ. It doesn't matter where this 
 **A couple of other useful settings might include:**\n`_settings djrole rolename`:\nSet any role to the DJ role\n\n`_settings requiredj disable`:\nAllows playback management commands to be used by users without the DJ role.\n\n`_settings djonly enable`:\nDisables commands entirely for any users __without__ the DJ role.\n\n`_settings djrolesadd rolename`:\nAdds extra DJ roles.\n\n`_settings djroleslist`:\nLists all of the extra DJ roles you've set.\n\n`_settings djrolesremove rolename`:\nRemoves extra DJ roles.}
 {=(r5):**Managing Access and Settings:**\nOctave comes stocked with ability to make user access limitations within your server as granular as you can dream. 
 Follow along the bot prompts to change these settings. 
-For example:\nTo make the bot ignore commands in a channel, do `_ignore channel [channel]`\nYou can adjust command OR category usability by user, role, and/or channel}
+For example:\nTo make the bot ignore commands in a channel, do `_ignore channel [channel]`\nYou can adjust command OR category usability by user, role, and/or channel. However, if you have `Administrator` or `Manage Server` it will still respond to you. You can check your ignored channels / users / roles using `_ignore list`}
 {=(r6):You can pass these key words `{join(`, `):{opt}}` to view those sections specifically}
 {=(r-1): {r1}\n
 **Playing Music:** `_play,` `_youtube`, `_soundcloud` to get the music going..
