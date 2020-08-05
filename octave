@@ -69,7 +69,7 @@ _Click the links that are in blue to see an image preview._}
 {=(r13):**Claiming Octave Perks**\nWe're currently experiencing issues with Patreon. If you've pledged but are unable to link your account with the bot, you can DM **devoxin#8834** for your perks. If you've not received a donor role within the server, you may need to provide proof-of-pledge.}
 {=(L1):{lower:{1}}}
 {=(Lopt):{lower:{opt}}}
-{=(content):{if({in({L1}):{Lopt}}==true):{r{index({L1}):{opt}}}|{if({args(1)}==perks):perks|keywords}}}
+{=(content):{if({in({L1}):{Lopt}}==true):{r{index({L1}):{opt}}}|{if({args(1)}==perks):perks|<:tickNo:315009174163685377> **You gave an invalid entry!**\nYou can view the keywords using `-o keywords`}}}
 {=(json):{
     "thumbnail":{
         "url":"https://cdn.discordapp.com/attachments/650188087959486465/707015792197107752/4453168-2.gif",
