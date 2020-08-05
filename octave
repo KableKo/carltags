@@ -81,5 +81,5 @@ _Click the links that are in blue to see an image preview._}
     "color":11176191,
     "type":"rich",
     "description":"{content}",
-    "title":"General Controls"}}
+    "title":""}}
 {c:cembed {json}}
