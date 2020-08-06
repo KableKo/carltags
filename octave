@@ -1,4 +1,4 @@
-{=(opt):settings prefix play music dj manage keywords perks noaudio pl radio vl idea}
+{=(opt):settings prefix play music dj manage keywords perks noaudio pl radio vl idea rewards}
 {=(r0):**Settings Menu:** To access octaves settings walkthru that cover each method of enable/disable settings as well as other guild settings do `_settings` and see bot response.}
 {=(r1):**Change Prefix:**\n`_prefix [new prefix goes here/reset]` 
 You can set a new prefix for your server by invoking `_prefix !` where `!` is now your new prefix. To reset prefix, you can pass `octave prefix reset` to place it back to the default prefix of `_`.}
@@ -17,11 +17,9 @@ You can also run any of these for general queue management/playback:
 `_restart` • Restart the current song.
 `_repeat` • Set if the music player should repeat.
 `_voteskip` • Vote to skip the current music track.
-`_volume` • Set the volume of the music player.
-`_move` • Moves a song from the queue.
 `_jump` • Set the time marker of the music playback.
-`_bass` • Boost the bass of the music
-`_cleanup` • Clear songs queued by a certain user [`_cu left` to clear tracks from user no longer in voice channel]}
+`_cleanup` • Clear songs queued by a certain user [`_cu left` to clear tracks from user no longer in voice channel]
+`_skipto` • Skips the current music track to a certain song in the queue. For instance `_skipto 3` will skip to 3rd song in the queue.}
 {=(r3):**Platform Support:**
 Octave pulls in track information and playback from 
 <:youtube:688883689173942302> YouTube • Tracks, Playlists, Searches, Links, Streams
@@ -38,7 +36,7 @@ From your server menu, make a role and name it DJ. It doesn't matter where this 
 **A couple of other useful settings might include:**\n`_settings djrole rolename`:\nSet any role to the DJ role\n\n`_settings requiredj disable`:\nAllows playback management commands to be used by users without the DJ role.\n\n`_settings djonly enable`:\nDisables commands entirely for any users __without__ the DJ role.\n\n`_settings djrolesadd rolename`:\nAdds extra DJ roles.\n\n`_settings djroleslist`:\nLists all of the extra DJ roles you've set.\n\n`_settings djrolesremove rolename`:\nRemoves extra DJ roles.}
 {=(r5):**Managing Access and Settings:**\nOctave comes stocked with ability to make user access limitations within your server as granular as you can dream. 
 Follow along the bot prompts to change these settings. 
-For example:\nTo make the bot ignore commands in a channel, do `_ignore channel [channel]`\nYou can adjust command OR category usability by user, role, and/or channel}
+For example:\nTo make the bot ignore commands in a channel, do `_ignore channel [channel]`\nYou can adjust command OR category usability by user, role, and/or channel. However, if you have `Administrator` or `Manage Server` it will still respond to you. You can check your ignored channels / users / roles using `_ignore list`}
 {=(r6):You can pass these key words `{join(`, `):{opt}}` to view those sections specifically}
 {=(r-1): {r1}\n
 **Playing Music:** `_play,` `_youtube`, `_soundcloud` to get the music going..
@@ -64,13 +62,14 @@ If it says RTC connecting, consider downloading the Discord desktop client, or t
 
 
 _Click the links that are in blue to see an image preview._}
-{=(r9):**How to make playlists on Octave?**\n\n`_playlists create <your playlist name>`\nThis creates a new custom playlist to the bot.\n\n`_playlists delete <your playlist name>`\nThis deletes one of your custom playlist from the bot. You MUST type the full name of the playlist or it will not delete the playlist.\n\n`_playlists edit <your playlist name>`\nThis edits your custom playlist. You can also use a fuzzy search instead of typing the full name of the playlist. For example, if the playlist is named `Thumbs Up - Google Play Music`, you can do `_playlists edit Google` and it will show up. When you run the command, type `help` to see the full list of commands on how to move songs, remove songs, etc from the playlist.\n\n`_playlists import <link>`\nThis imports a playlist from YouTube/SoundCloud/Spotify etc.\n\n`_playlists list`\nThis lists all of your custom playlists on the bot.\n\n`_playlists load <your playlist name>`\nThis loads a custom playlist for playing. You can also use a fuzzy search instead of typing the full name of the playlist. For example, if the playlist is named `Thumbs Up - Google Play Music`, you can do `_playlists load Google` and it will load the playlist.}
+{=(r9):**How to make playlists on Octave?**\n\n`_playlists create <playlist name>`\nThis creates a new custom playlist to the bot.\n\n`_playlists delete <playlist name>`\nThis deletes one of your custom playlist from the bot. You MUST type the full name of the playlist or it will not delete the playlist.\n\n`_playlists edit <playlist name>`\nThis edits your custom playlist. You can also use a fuzzy search instead of typing the full name of the playlist. For example, if the playlist is named `Thumbs Up - Google Play Music`, you can do `_playlists edit Google` and it will show up. When you run the command, type `help` to see the full list of commands on how to move songs, remove songs, etc from the playlist.\n\n`_playlists import <link>`\nThis imports a playlist from YouTube/SoundCloud/Spotify etc.\n\n`_playlists list`\nThis lists all of your custom playlists on the bot.\n\n`_playlists load <playlist name>`\nThis loads a custom playlist for playing. You can also use a fuzzy search instead of typing the full name of the playlist. For example, if the playlist is named `Thumbs Up - Google Play Music`, you can do `_playlists load Google` and it will load the playlist.\n\n`_add <playlist name> <query>`\nThis Searches for and adds a track to a playlist.\n\n`_savequeue <playlist name>`\nSaves the entire queue to a custom playlist.\n\n`_saveto <playlist name>`\nSaves the current track to a custom playlist.}
 {=(r10):**Are we allowed to use custom playlists as a radio station, if so how can we do it?**\nYes, you can use custom playlists as a radio station. To play it as a radio station, do `_radio custom <your playlist name>`.\n\n**Can we still play the preset radio stations that were already on the bot?**\nYes, you can still play the preset radio stations `_radio discordfm <radio station name>`.\n\n**How can I stop the radio station?**\n`_radio stop`}
 {=(r11):**Why did volume/bassboost/filters stop working for me?**\nThis is recently changed to be a patreon perk which you can find as a perk on our patreon [here by clicking this blue link](https://www.patreon.com/octavebot?join). We know this sucks, and a lot of you added Octave for the sake of free volume, but unfortunately we can't both lose our growth AND be in the negatives for monthly income. Hopefully it won't always be this way, once things get more stable. But with the cost of performance for everything being free, we don't have the money to keep expanding servers for free volume to keep existing.}
 {=(r12):**Have a suggestion for the bot?**\nPlease make sure that your idea is **NOT** on the bot (see ``_help`` for list of commands, if its not on the main bot, then make sure it isn't on Octave Canary as well, see ``-help`` for list of commands), nor in <#675349770016915469>, nor on the [Trello (by clicking this blue text)](https://trello.com/b/gWGJVv3O/octave). If its not on any of these mentioned, then run ``-suggest <your idea here>`` in <#224378250682564608>.}
+{=(r13):**Claiming Octave Perks**\nWe're currently experiencing issues with Patreon. If you've pledged but are unable to link your account with the bot, you can DM **devoxin#8834** for your perks. If you've not received a donor role within the server, you may need to provide proof-of-pledge.}
 {=(L1):{lower:{1}}}
 {=(Lopt):{lower:{opt}}}
-{=(content):{if({in({L1}):{Lopt}}==true):{r{index({L1}):{opt}}}|{if({args(1)}==perks):perks|keywords}}}
+{=(content):{if({in({L1}):{Lopt}}==true):{r{index({L1}):{opt}}}|{if({args(1)}==perks):perks|<:tickNo:315009174163685377> **You gave an invalid entry!**\nYou can view the keywords using `-o keywords`}}}
 {=(json):{
     "thumbnail":{
         "url":"https://cdn.discordapp.com/attachments/650188087959486465/707015792197107752/4453168-2.gif",
@@ -82,5 +81,5 @@ _Click the links that are in blue to see an image preview._}
     "color":11176191,
     "type":"rich",
     "description":"{content}",
-    "title":"General Controls"}}
+    "title":""}}
 {c:cembed {json}}
