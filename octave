@@ -1,5 +1,5 @@
 {=(opt):settings prefix play music dj manage keywords perks noaudio radio vl idea}
-{=(r0):**Settings Menu:** To access octaves settings walkthru that cover each method of enable/disable settings as well as other guild settings do `_settings` and see bot response.}
+{=(r0):**Settings Menu:** To access octaves settings walkthru that cover each method of enable/disable settings as well as other guild settings do `_settings` and see bot response. If you you would like to see the settings you edited, you can now do that by doing `_settings show`.}
 {=(r1):**Change Prefix:**\n`_prefix [new prefix goes here/reset]` 
 You can set a new prefix for your server by invoking `_prefix !` where `!` is now your new prefix. To reset prefix, you can pass `octave prefix reset` to place it back to the default prefix of `_`.}
 {=(r2):**Playing Music:**\n`_play`, `_youtube`, `_soundcloud` to get the music going 
@@ -56,7 +56,7 @@ If it says RTC connecting, consider downloading the Discord desktop client, or t
 4. [Check that you have the bot turned up](https://i.imgur.com/hAQqS33.png)
 5. Check that the bot is not paused. (You should be able to tell based on whether there's a green ring around the bot). You can resume the bot with `_play`.
 6. Check that the bot is playing a track. (You can check this now `_np`).
-7. Check that the bot's player volume is not turned down (`_volume`).
+7. Check that the bot's player volume is not turned down (`_volume`). *This is a patreon perk, if you are a patron, you can use the volume command*
 8. [Check your output device](https://i.imgur.com/oPAko1z.png)
 9. [Check your Windows volume (applicable to Windows users only)](https://i.imgur.com/P2GN3zF.png)
 
