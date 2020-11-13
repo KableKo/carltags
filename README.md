@@ -9,9 +9,6 @@ No other support is offered here
 ## Contributions
 
 KableKompany
-
 tintin
-
 Raffael#7777
-
 Boo
