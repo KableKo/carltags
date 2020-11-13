@@ -1,4 +1,4 @@
-// --- Vers. 3 --- //
+{=(versioning):--- Vers. 3 ---}
 {=(list):name pfp status}{=(flag):{lower:{2}}}
 {=():}
 {=(flag):{if({contains({lower:{flag}}):{list}}==true):{lower:{flag}}|}}
@@ -15,7 +15,7 @@
 {=(warnCmd):warn {culprit} {dmReason}}
 {=(kickCmd):kick {culprit} {modlogReason}}
 {=(rCmd):rm 12h  `-i {culprit}` Check and see if this user rejoined with blacklisted {flag}}
-{=(done):You chose no reminders for this action. :RIP:}{=(done):reactu: :rekt: }
+{=(done):{exe} echo You chose no reminders for this action.}
 {=(step1):{exe}{if({culprit}==):eCmd|{warnCmd}}}
 {=(step2):{exe}{if({culprit}==):eCmd|{kickCmd}}}
 {=(step3):{exe}{if({culprit}==):eCmd|{rCmd}}}
