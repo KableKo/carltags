@@ -4,10 +4,11 @@ A Collection of Tagscripted tags used for various needs in my servers on Discord
 [Server for Support](https://discord.gg/carl)
 
 Use custom syntax highlighting for best effect. Notes extension with .vscode settings works well.
+No other support is offered here
 
 ## Contributions
 
-KableKompany
-tintin
-Raffael#7777
-Boo
+- KableKompany
+- tintin
+- Raffael#7777
+- Boo
