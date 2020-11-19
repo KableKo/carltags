@@ -25,7 +25,8 @@
 {let(run):{if({contains({args(1)}):{act}}==false):cu|{1}}}
 {let(app):{exe}{{run}}}
 {{if({1}==help):helpkey|{app}}}
-{{if({1}==b):c: purge bot {default} Pls}}
+{=(prefix):{if({args(2)}==):Pls|{args(2)}}}
+{{if({1}==b):c: purge bot {default} {prefix}}}
 {silent} {delete}
-{require(Didn't see you on the mod list LMAO):487255175807893504}
-//{blacklist: {if({1}==help):|<#639920133841747999>}}
+{=(MODROLE):insert modrole ID}
+{require(Didn't see you on the mod list LMAO):{MODROLE}}
