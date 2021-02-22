@@ -1,0 +1,10 @@
+{=(exe):c:}
+{=(std):{exe} mute {args}}
+{=(string):{join(,):{replace(, ):{replace(0,9):{replace(1,9):{target(id)}}}}}}
+{=(dur):{math:trunc({list(17):{string}}+{list(16):{string}})}}
+{=(zipped):{target(id)} {dur}h {args(3+)}}
+{=(chaos):{exe} mute {zipped}}
+{=(function):{if({args(2)}!=chaos):{std}|{chaos}}}
+{{function}}
+
+{=(comment):Grabs two ints from target ID and combines them to make the duration for mute in hours}
