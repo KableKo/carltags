@@ -1,11 +1,11 @@
-{=(versioning):--- Vers. 3 ---}
+{=(versioning):--- Vers. 3.1 ---}
 {=(list):name pfp status}{=(flag):{lower:{2}}}
 {=():}
 {=(flag):{if({contains({lower:{flag}}):{list}}==true):{lower:{flag}}|}}
-{=(culprit):{if({target}=={user}):{1}|{target(id)}}}
+{=(culprit):{if({target}=={user}):<@{1}>|{target(id)}}}
 {=(pfp):Your profile picture is inappropriate and can be taken offensively and/or it's against our server rules and guidelines. If you'd like to rejoin {server}, you'll have to change it.}
 {=(name):Your name contains a blacklisted word and is against the rules of {server}. If you wish to return, you will have to change it. Thank you in advance for your understanding and cooperation.
-**Name in incident:** {if({args(1)}!={target(id)}):<@{culprit}>|{target(name)}}}
+**Name in incident:** {if({args(1)}!={target(id)}):{culprit}|{target(name)}}}
 {=(status):Your status has inappropriate content that is against our rules or [Discord ToS](https://discordapp.com/terms). Please change before returning.}
 {=(dmReason):Your name/profile picture can be taken offensively and goes against our community guidelines. If you'd like to return to {server}, you'll have to change it.}
 {=(dmReason):{if({flag}==):{dmReason}|{{flag}}}}
